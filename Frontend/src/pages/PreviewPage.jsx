@@ -12,7 +12,7 @@ const PreviewPage = () => {
   useEffect(() => {
     const fetchForm = async () => {
       try {
-        const res = await API.get(`/forms/${id}`);
+        const res = await API.get(`https://form-builder-2-0srn.onrender.com/forms/${id}`);
         setForm(res.data);
       } catch (error) {
         console.error("Error loading form:", error);

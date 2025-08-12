@@ -24,7 +24,7 @@ export default function EditorPage(){
   const uploadFile = async (file)=>{
     const fd = new FormData();
     fd.append('file', file);
-    const res = await API.post('/upload', fd, { headers:{ 'Content-Type':'multipart/form-data' } });
+    const res = await API.post('https://form-builder-2-0srn.onrender.com/upload', fd, { headers:{ 'Content-Type':'multipart/form-data' } });
     return res.data.url;
   }
 
@@ -32,7 +32,7 @@ export default function EditorPage(){
     setSaving(true)
     try{
       const payload = { title, headerImage, questions }
-      const res = await API.post('/forms', payload)
+      const res = await API.post('https://form-builder-2-0srn.onrender.com/forms', payload)
       alert('Saved! form id: ' + res.data._id)
       const previewUrl = `/preview/${res.data._id}`
       window.open(previewUrl, '_blank')
