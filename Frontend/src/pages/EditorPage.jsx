@@ -32,7 +32,7 @@ export default function EditorPage(){
     setSaving(true)
     try{
       const payload = { title, headerImage, questions }
-      const res = await API.post('https://form-builder-2-0srn.onrender.com/forms', payload)
+      const res = await API.post('https://form-builder-2-0srn.onrender.com/api/forms', payload)
       alert('Saved! form id: ' + res.data._id)
       const previewUrl = `/preview/${res.data._id}`
       window.open(previewUrl, '_blank')
